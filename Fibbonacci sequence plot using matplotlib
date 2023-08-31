@@ -1,0 +1,24 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+k = int(input('Select a range of Fibonacci numbers: '))
+i = np.zeros(shape=k)
+i[0] = 0
+i[1] = 1
+for r in range(2, k):
+    i[r] = i[r-1] + i[r-2]
+
+x = np.arange(0, k)
+y = i
+
+plt.figure(figsize=(10, 6)) #For visibility
+
+plt.plot(x, y, marker='o', linestyle='-', color='b', label='Fibonacci Sequence')
+plt.xlabel('Index')
+plt.ylabel('Value')
+plt.title('Fibonacci Sequence')
+plt.grid(True) 
+plt.legend()
+
+plt.show()
+
